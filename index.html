@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wael Hasan | IT Specialist Portfolio</title>
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#121a2b;
+      --text:#e8eefc;
+      --muted:#9fb0d0;
+      --accent:#4da3ff;
+      --border:rgba(255,255,255,0.08);
+    }
+
+    *{box-sizing:border-box; margin:0; padding:0;}
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #070c15 0%, #0b1220 30%, #0b1220 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a{color:var(--accent); text-decoration:none;}
+    a:hover{text-decoration:underline;}
+
+    .container{
+      width: min(1100px, 92%);
+      margin: 0 auto;
+      padding: 40px 0;
+    }
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      padding: 18px 20px;
+      border: 1px solid var(--border);
+      background: rgba(18,26,43,0.8);
+      border-radius: 18px;
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 16px;
+      z-index: 50;
+    }
+
+    .brand h1{font-size: 18px; letter-spacing:0.3px;}
+    .brand p{font-size: 13px; color: var(--muted);}
+
+    nav{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    nav a{
+      font-size: 13px;
+      color: var(--text);
+      opacity:0.9;
+      padding: 6px 10px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+    }
+    nav a:hover{
+      border-color: var(--border);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .hero{
+      margin-top: 30px;
+      display:grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap:20px;
+      align-items:stretch;
+    }
+
+    .card{
+      background: rgba(18,26,43,0.9);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .hero h2{
+      font-size: 34px;
+      line-height:1.2;
+      margin-bottom: 12px;
+      letter-spacing:0.4px;
+    }
+
+    .hero p{
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+
+    .btns{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 10px;
+    }
+    .btn{
+      display:inline-block;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      font-size: 13px;
+      font-weight: 600;
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      transition: 0.2s ease;
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, #4da3ff, #2b75ff);
+      border: none;
+    }
+    .btn:hover{transform: translateY(-1px);}
+
+    .quick-info p{
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top: 12px;
+    }
+    .tag{
+      font-size: 12px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(77,163,255,0.12);
+      border: 1px solid rgba(77,163,255,0.2);
+      color: #cfe3ff;
+    }
+
+    section{margin-top: 30px;}
+    section h3{
+      font-size: 18px;
+      margin-bottom: 12px;
+      letter-spacing:0.2px;
+    }
+    section p{color:var(--muted);}
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .item h4{
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+    .item ul{
+      margin-top: 10px;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .projects{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .proj-title{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:12px;
+    }
+    .pill{
+      font-size: 11px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: rgba(255,255,255,0.04);
+      white-space:nowrap;
+    }
+
+    footer{
+      margin-top: 40px;
+      padding: 20px;
+      text-align:center;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 950px){
+      .hero{grid-template-columns:1fr;}
+      .grid{grid-template-columns:1fr;}
+      .projects{grid-template-columns:1fr;}
+      header{position:relative; top:0;}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <div class="brand">
+        <h1>Wael Bassam Hasan</h1>
+        <p>IT Specialist | Systems & Network Support</p>
+      </div>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#certs">Certifications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="card">
+        <h2>Reliable IT Operations, Secure Systems, Strong Network Support.</h2>
+        <p>
+          I support and improve IT environments through troubleshooting, endpoint security, 
+          system administration, and network stability — ensuring business continuity and secure access.
+        </p>
+
+        <div class="btns">
+          <a class="btn primary" href="#contact">Hire / Contact</a>
+          <a class="btn" href="#projects">View Projects</a>
+
+          <!-- Download CV (Your uploaded PDF) -->
+          <a class="btn" href="Wael_Hasan_IT_Portfolio.pdf" download>Download CV</a>
+
+          <!-- LinkedIn button -->
+          <a class="btn" href="https://www.linkedin.com/in/wael-hasan-b20477233" target="_blank">LinkedIn</a>
+        </div>
+
+        <div class="tags">
+          <span class="tag">IT Support (Tier 1/2)</span>
+          <span class="tag">Systems Administration</span>
+          <span class="tag">Network Troubleshooting</span>
+          <span class="tag">Endpoint Security</span>
+          <span class="tag">Backup & DR</span>
+          <span class="tag">Fortinet</span>
+        </div>
+      </div>
+
+      <div class="card quick-info">
+
+        <h3 style="margin-bottom:10px;">Quick Info</h3>
+       <img src="profile.png" alt="Wael Hasan"
+style="
+width:120px;
+height:120px;
+border-radius:50%;
+object-fit:cover;
+border:3px solid #4da3ff;
+margin-bottom:14px;
+">
+
+        <p><b>Location:</b> Beirut, Lebanon</p>
+        <p><b>Email:</b> <a href="mailto:wael7676@outlook.com">wael7676@outlook.com</a></p>
+        <p><b>Phone:</b> <a href="tel:+96176766279">+961 76 766279</a></p>
+        <p><b>Languages:</b> Arabic (Native), English (Fluent)</p>
+        <p><b>Focus:</b> Systems, Networking, Security, Monitoring</p>
+
+        <div style="margin-top:14px;">
+          <!-- LinkedIn only -->
+          <a class="btn" href="https://www.linkedin.com/in/wael-hasan-b20477233" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="card">
+        <h3>About Me</h3>
+        <p>
+          I’m an IT Specialist with experience supporting enterprise and retail environments.
+          I work on systems administration, networking, endpoint security, monitoring, backup verification,
+          and technical support workflows. I enjoy solving problems fast, improving stability, and keeping systems secure.
+        </p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h3>Skills & Tools</h3>
+      <div class="grid">
+        <div class="card item">
+          <h4>Systems & Admin</h4>
+          <ul>
+            <li>Windows Workstations / Server basics</li>
+            <li>Active Directory / Access Management</li>
+            <li>Microsoft 365 / Google Workspace</li>
+            <li>Patch & software deployment</li>
+          </ul>
+        </div>
+
+        <div class="card item">
+          <h4>Networking</h4>
+          <ul>
+            <li>LAN/WAN, DNS, DHCP, TCP/IP</li>
+            <li>VPN troubleshooting (OpenVPN / FortiClient)</li>
+            <li>PoE, cabling, Wi-Fi support</li>
+            <li>Firewall & routing basics</li>
+          </ul>
+        </div>
+
+        <div class="card item">
+          <h4>Security & Monitoring</h4>
+          <ul>
+            <li>CrowdStrike, BitLocker, PAM</li>
+            <li>WAZUH SIEM monitoring</li>
+            <li>Backup verification (Acronis)</li>
+            <li>SNMP monitoring + SMTP alerts</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h3>Selected Projects</h3>
+      <div class="projects">
+
+        <div class="card">
+          <div class="proj-title">
+            <h4>Service Desk Setup & IT Process Improvement</h4>
+            <span class="pill">Operations</span>
+          </div>
+          <p style="margin-top:8px; color:var(--muted);">
+            Built a structured service desk workflow to improve ticket handling and response time.
+          </p>
+          <ul>
+            <li>Created SOPs, templates, and escalation standards</li>
+            <li>Improved team coordination using Agent Central</li>
+            <li>Applied IT standardization policies</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="proj-title">
+            <h4>Secure Work-From-Home Device Rollout</h4>
+            <span class="pill">Security</span>
+          </div>
+          <p style="margin-top:8px; color:var(--muted);">
+            Prepared laptops for secure remote work using endpoint protection and encryption.
+          </p>
+          <ul>
+            <li>Deployed CrowdStrike + BitLocker</li>
+            <li>Controlled privileged access using PAM</li>
+            <li>Supported OpenVPN and FortiClient VPN</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="proj-title">
+            <h4>Network Support + VPN Connectivity</h4>
+            <span class="pill">Infrastructure</span>
+          </div>
+          <p style="margin-top:8px; color:var(--muted);">
+            Maintained network stability and VPN connectivity for secure operations.
+          </p>
+          <ul>
+            <li>Configured Fortinet devices and IPsec tunnels</li>
+            <li>Handled cabling, PoE, and Wi-Fi troubleshooting</li>
+            <li>Printer monitoring via SNMP + alerts</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="proj-title">
+            <h4>Backup Verification & Disaster Recovery Support</h4>
+            <span class="pill">Continuity</span>
+          </div>
+          <p style="margin-top:8px; color:var(--muted);">
+            Verified backups daily and supported DR readiness.
+          </p>
+          <ul>
+            <li>Monitored Acronis reports and resolved failures</li>
+            <li>Worked with Veeam / Datto / Acronis</li>
+            <li>Supported VMware, Hyper-V, Nutanix DR</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <h3>Experience</h3>
+      <div class="grid">
+
+        <div class="card item">
+          <h4>IT Network & Support Officer — CASHUNITED SAL</h4>
+          <p style="margin-top:8px;">
+            Systems & network support, security hardening, backups, Fortinet VPN, monitoring, and documentation.
+          </p>
+        </div>
+
+        <div class="card item">
+          <h4>Tier 2 Technical Support Engineer — CME (Dollar General, USA)</h4>
+          <p style="margin-top:8px;">
+            Remote POS support, Linux troubleshooting, vendor support, ServiceNow workflows, and SQL basics.
+          </p>
+        </div>
+
+        <div class="card item">
+          <h4>IT Support / Assistant IT Manager — Baroody Group</h4>
+          <p style="margin-top:8px;">
+            POS systems, deployments, network setup, Meraki support, CCTV/attendance systems, virtualization.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certs">
+      <div class="card">
+        <h3>Education & Certifications</h3>
+        <ul style="margin-top:10px; padding-left:18px; color:var(--muted);">
+          <li>Bachelor in Information Technology — LIU</li>
+          <li>Google Technical Support Fundamentals (Coursera)</li>
+          <li>FortiGate Operator</li>
+          <li>Cisco Networking Academy (IT Essentials, Routing & Switching, Intro to Cybersecurity)</li>
+          <li>Google Workspace User & Resource Management</li>
+          <li>Security & Compliance: GDPR, InfoSec, Data Privacy, CCPA (and more)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="card">
+        <h3>Contact</h3>
+        <p>
+          Want to work together or discuss opportunities?  
+          Reach me at <a href="mailto:wael7676@outlook.com">wael7676@outlook.com</a>  
+          or call <a href="tel:+96176766279">+961 76 766279</a>.
+        </p>
+
+        <div class="btns" style="margin-top:14px;">
+          <a class="btn primary" href="mailto:wael7676@outlook.com">Email Me</a>
+          <a class="btn" href="tel:+96176766279">Call</a>
+          <a class="btn" href="https://www.linkedin.com/in/wael-hasan-b20477233" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Wael Bassam Hasan • IT Specialist Portfolio
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
